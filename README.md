@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-* Desenvolver as habilidades na linguagem JAva;
+* Desenvolver as habilidades na linguagem Java;
 * Criar uma aplicação que consuma a IMDb API e retorne os TOP 250 filmes;
 * Esse retorno será exibido em um arquivo HTML com sua devida formatação;
 * O retorno da IMDb API será via JSON;
