@@ -21,8 +21,10 @@ O desafio trata-se de um desenvolvimento orientado por 7 dias onde em cada dia �
 
 ## Implementações
 
-* **Dia 1:** Criada classe KeyReader para que a leitura da chave de acesso à API seja feita de forma externa ao código. Dessa forma protege a chave pessoal de visualização no repositório. Em uma implementação deve-se criar o arquivo k_imdb.txr com a chave escrita na primeira linha.
+* **Dia 1:** Criada classe **KeyReader** para que a leitura da chave de acesso à API seja feita de forma externa ao código. Dessa forma protege-se a chave pessoal de visualização no repositório. Em uma implementação, deve-se criar o arquivo **k_imdb.txt** e seu conteúdo deve conter a chave na primeira linha.
+
 ![imagem_keyreader](./img/keyreader.png)
-Implementada a requisiçção HTTP via bibliotecas HTTPClient, HTTPRequest e HTTPResponse, obtendo-se assim o JSON de resposta e o status code.
+
+Na classe app foi implementada a requisição HTTP via bibliotecas HTTPClient, HTTPRequest e HTTPResponse. Dessa forma obtendo-se o JSON de resposta e o status code.
 
 * Dia 2
