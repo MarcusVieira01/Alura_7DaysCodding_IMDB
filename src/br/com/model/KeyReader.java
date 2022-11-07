@@ -11,7 +11,7 @@ import java.io.Reader;
 //Declaração da classe
 public class KeyReader {
     //Atributos privados
-    String chave;
+    String chave = "";
 
     //Declaração de método getter
     public String getChave() throws Exception {
