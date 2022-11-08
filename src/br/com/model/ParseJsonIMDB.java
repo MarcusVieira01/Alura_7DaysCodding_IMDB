@@ -8,26 +8,37 @@ import java.util.List;
 //Declaração de classe
 public class ParseJsonIMDB {
     //Atributos privados
-    String json;
+    private String json;
 
     //Declaração de constutor
     public ParseJsonIMDB(String json) {
         this.json = json;
     }
 
-    //Declaração de método que fará a separação do JSON em elementos individuais e retornará um List apenas com os títulos dos filmes
-    public List<String> parseTitulo(){
+    //Declaração de método que fará a separação do JSON em elementos individuais e retornará um List com apenas os elementos do parâmetro desejado
+    public List<String> parseElemento(String parametro){
         //Instanciação de novo objeto List com construtor ArrayList
-        List<String> listaTitulos = new ArrayList<>();
+        List<String> lista = new ArrayList<>();
+        //Declaração de variável que conterá o valor do parâmentro a ser acessado concatenado com um valor string constante para que seja realizada a segregação pertinente
+        String regexConcatenada = parametro + "\":\"";
+
+        //Realizada a substituição de caracteres indesejados por uma string vazia
+        String jsonLimpo = this.json.replace("{\"items\":[{", "")
+        .replace("\"}],\"errorMessage\":\"\"}", "")
+        .replace("},{", ",");
+        
         //Uso de método da classe String para separação do JSON em elementos individuais. Caractere separador usado ,
-        String[] jsonSemVirgulas = this.json.split("\",\"");
-        //Looping forEach (template) que fará a iteração de cada elemento do array semVirgulas. Em cada iteração a condição acessará o retorno do método contains(arg) que caso true fará a adição do valor de elemneto à ArrayList titulos 
+        String[] jsonSemVirgulas = jsonLimpo.split("\",");
+
+        //Looping forEach (template) que fará a iteração de cada elemento do array jsonSemVirgulas. Em cada iteração a condição acessará o retorno do método contains(arg) em cada caso e se  true fará a adição do valor de elemneto à ArrayList listaTitulos 
         for (String elemento : jsonSemVirgulas) {
-            if(elemento.contains("title")){
-                listaTitulos.add(elemento.replaceAll("title\":\"", ""));
+            if(elemento.contains("\"" + parametro)){
+                lista.add(elemento.replaceAll(regexConcatenada, "")
+                .replaceFirst("\"", ""));
             }
         }
+        
         //Retorno do objeto de referência contida em listaTitulos
-        return listaTitulos;
+        return lista;
     }
 }
