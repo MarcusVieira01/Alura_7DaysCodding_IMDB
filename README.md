@@ -23,6 +23,10 @@ O desafio trata-se de um desenvolvimento orientado por 7 dias onde em cada dia �
 
 * **Dia 1:** Criada classe **KeyReader** para que a leitura da chave de acesso à API seja feita de forma externa ao código. Dessa forma protege-se a chave pessoal de visualização no repositório. Em uma implementação, deve-se criar o arquivo **k_imdb.txt** e seu conteúdo deve conter a chave na primeira linha.
 ![imagem_keyreader](./img/keyreader.png)
-Na classe app foi implementada a requisição HTTP via bibliotecas HTTPClient, HTTPRequest e HTTPResponse. Dessa forma obtendo-se o JSON de resposta e o status code.
+Na classe App foi implementada a requisição HTTP via bibliotecas HTTPClient, HTTPRequest e HTTPResponse. Dessa forma obtendo-se o JSON de resposta e o status code.
 
-* Dia 2
+* **Dia 2:** Criada a classe ParseJsonIMDB que implementa uma separação do JSON de resposta da requiusição HTTP para um parâmetro desejado, como título ou ID do filme. No desafio era requerido um método por parâmetro, porém implementado um método genérico que retorna qualquer parâmetro do JSON, apenas alterando o argumento passado na evocação do método.
+![imagem_parsejasonimdb](./img/parsejasonimdb.png)
+Na classe App foi implementado o uso da classe ParseJsonIMDB para exibir os parâmetros desejados do elemento 3, 4º filme do TOP 250.
+
+* **Dia 3:**
