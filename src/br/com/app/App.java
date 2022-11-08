@@ -6,30 +6,46 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 //Importação de classe interna
 import br.com.model.KeyReader;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        //Declaração de variável e atribuição do valor da chave contida no arquivo k_imdb. Usada a classe KeyReader para obtenção do valor da chave de acesso do IMDb API
-        String chave = new KeyReader().getChave();
-
-        //Declaração de variáveis. A variável uri recebe a referência de um objeto instanciado via classe URI. O valor passado no construtor é a concatenação da url de acesso da API ao serviço dos top 250 filmes e o valor da chave de acesso
-        String url = "https://imdb-api.com/en/API/Top250Movies/" + chave;
-        URI uri = new URI(url);
+        //Instanciação de uma uri como objeto, com argumento sendo a URL do serviço da API concatenado com a chave de acesso à API devifinido pela instancia de objeto da classe Keyreader e evocação do método getter
+        URI uri = new URI("https://imdb-api.com/en/API/Top250Movies/" + new KeyReader().getChave());
 
         //Criação de fluxo de requição e reposta via HTTP. Instanciament de client, construção da requisição e leitura do corpo da resposta
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(uri).GET().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-        //Armazenamento do código de status da resposta, assim como o corpo da resposta. No caso um JSON.
-        int statusCode = response.statusCode();
-        String conteudo = response.body();
+        //Armazenamento do corpo da resposta. No caso um JSON.
+        String jsonTotal = response.body();
+        
+        //Uso de método da classe String para separação do JSON em elementos individuais. Caractere separador usado ,
+        String[] jsonSemVirgulas = jsonTotal.split("\",\"");
 
-        //Exibição dos valores contidos nas variáveis para conferência
-        System.out.println(conteudo);
-        System.out.println("Status code: " + statusCode);
+        //Instanciação de nova ArrayList para armazenar os títulos
+        List<String> titulos = new ArrayList<>();
+        //Looping forEach (template) que fará a iteração de cada elemento do array semVirgulas. Em cada iteração a condição acessará o retorno do método contains(arg) que caso true fará a adição do valor de elemneto à ArrayList titulos 
+        for (String elemento : jsonSemVirgulas) {
+            if(elemento.contains("title")){
+                titulos.add(elemento.replaceAll("title\":\"", ""));
+            }
+        }
+
+
+
+        
+        //Uso de iteração via método forEach() para exibir cada elemento do arraylist titulo, para conferência
+        titulos.forEach(System.out::println);
+        //Exibiçãod o retorno do método que trará a quantidade de elementos do arraylist titulos
+        System.out.println("Elementos: " + titulos.size());
+        //Exibição do valor da variável statuscode, que armazena o status code da requisição HTTP
+        System.out.println("Status code: " + response.statusCode());
+
     }
 }
