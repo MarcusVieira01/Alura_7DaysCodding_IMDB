@@ -1,6 +1,7 @@
 //Declaração de pacote
 package br.com.model;
 
+//Importação de classes externas
 import java.util.ArrayList;
 import java.util.List;
 
