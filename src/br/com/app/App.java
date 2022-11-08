@@ -27,20 +27,39 @@ public class App {
         ParseJsonIMDB json = new ParseJsonIMDB(response.body());
         //Instanciação de listas via construtores ArrayList()
         List<String> id = new ArrayList<>();
-        List<String> titulos = new ArrayList<>();
-        //Atribuição ao objeto de referÇencia contida em titulos, o retorno do método .parseTitulo(). Retorno este que é um ArrayList dos títulos contidos no JSON de respota do IMDb API
-        titulos = json.parseTitulo();
+        List<String> title = new ArrayList<>();
+        List<String> rank = new ArrayList<>();
+        List<String> image = new ArrayList<>();
+
+        //Atribuição ao objeto de referência contida em id, titulos, rank e image do retorno do método .parseTitulo(). Retorno este que é um ArrayList dos parâmetros contidos no JSON de respota do IMDb API
+        id = json.parseElemento("id");
+        title = json.parseElemento("title");
+        rank = json.parseElemento("rank");
+        image = json.parseElemento("image");
+
+        //Exibição do elemento de valor da variável indice para os parâmentros desejados, como um teste de retorno
+        int indice = 3;
+        System.out.println("Elemento " + indice + " tem:\n" + 
+        "id " + id.get(indice) + "\n" + 
+        "titulo " + title.get(indice) + "\n" + 
+        "rank " + rank.get(indice) + "\n" + 
+        "image " + image.get(indice) + "\n");
+
+
 
 
 
         //USO PARA DEBUG MANUAL ____________________
-        System.out.println(response.body());
+        //System.out.println(response.body());
         //Uso de iteração via método forEach() para exibir cada elemento do arraylist titulo, para conferência
-        titulos.forEach(System.out::println);
+        // id.forEach(System.out::println);
+        // title.forEach(System.out::println);
+        // rank.forEach(System.out::println);
+        // image.forEach(System.out::println);
         //Exibiçãod o retorno do método que trará a quantidade de elementos do arraylist titulos
-        System.out.println("Elementos: " + titulos.size());
+        // System.out.println("Elementos: " + title.size());
         //Exibição do valor da variável statuscode, que armazena o status code da requisição HTTP
-        System.out.println("Status code: " + response.statusCode());
+        // System.out.println("Status code: " + response.statusCode());
 
     }
 }
