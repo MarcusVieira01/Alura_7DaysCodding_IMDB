@@ -11,6 +11,7 @@ import java.util.List;
 
 //Importação de classe interna
 import br.com.model.KeyReader;
+import br.com.model.ParseJsonIMDB;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -21,25 +22,19 @@ public class App {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(uri).GET().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-        //Armazenamento do corpo da resposta. No caso um JSON.
-        String jsonTotal = response.body();
         
-        //Uso de método da classe String para separação do JSON em elementos individuais. Caractere separador usado ,
-        String[] jsonSemVirgulas = jsonTotal.split("\",\"");
-
-        //Instanciação de nova ArrayList para armazenar os títulos
+        //Instanciação de objeto da classe ParseJsonIMDB passando o corpo da requisição HTTP
+        ParseJsonIMDB json = new ParseJsonIMDB(response.body());
+        //Instanciação de listas via construtores ArrayList()
+        List<String> id = new ArrayList<>();
         List<String> titulos = new ArrayList<>();
-        //Looping forEach (template) que fará a iteração de cada elemento do array semVirgulas. Em cada iteração a condição acessará o retorno do método contains(arg) que caso true fará a adição do valor de elemneto à ArrayList titulos 
-        for (String elemento : jsonSemVirgulas) {
-            if(elemento.contains("title")){
-                titulos.add(elemento.replaceAll("title\":\"", ""));
-            }
-        }
+        //Atribuição ao objeto de referÇencia contida em titulos, o retorno do método .parseTitulo(). Retorno este que é um ArrayList dos títulos contidos no JSON de respota do IMDb API
+        titulos = json.parseTitulo();
 
 
 
-        
+        //USO PARA DEBUG MANUAL ____________________
+        System.out.println(response.body());
         //Uso de iteração via método forEach() para exibir cada elemento do arraylist titulo, para conferência
         titulos.forEach(System.out::println);
         //Exibiçãod o retorno do método que trará a quantidade de elementos do arraylist titulos
