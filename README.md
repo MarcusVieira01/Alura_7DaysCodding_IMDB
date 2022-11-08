@@ -1,4 +1,4 @@
-# Projeto 7days of code - Java e IMDb API
+# Projeto 7 days of code - Java e IMDb API
 
 ## Objetivo
 
