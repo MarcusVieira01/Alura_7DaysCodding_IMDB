@@ -35,35 +35,35 @@ public class ParseJsonIMDB {
     }
     
     //Declaração de método que fará atribuição de cada elemento de ID na lista declarada
-    public List<String> parseID(){
+    public List<String> parseYear(){
         //Instanciação de novo objeto List com construtor ArrayList
-        List<String> listId = new ArrayList<>();
+        List<String> listYear = new ArrayList<>();
         
         //Looping forEach (template) que fará a iteração de cada elemento do array jsonSemVirgulas. Em cada iteração a condição acessará o retorno do método contains(arg) em cada caso e se  true fará a adição do valor de elemento à ArrayList listaTitulos 
         for (String elemento : extrairJson()) {
-            if(elemento.contains("\"id")){
-                listId.add(elemento.replaceAll("id\":\"", "").replaceFirst("\"", ""));
+            if(elemento.contains("\"year")){
+                listYear.add(elemento.replaceAll("year\":\"", "").replaceFirst("\"", ""));
             }
         }
         
         //Retorno o objeto ArrayList populado com os títulos
-        return listId;
+        return listYear;
     }
     
     //Declaração de método que fará atribuição de cada elemento de Rank na lista declarada
-    public List<String> parseRank(){
+    public List<String> parseRating(){
         //Instanciação de novo objeto List com construtor ArrayList
-        List<String> listRank = new ArrayList<>();
+        List<String> listRating = new ArrayList<>();
         
         //Looping forEach (template) que fará a iteração de cada elemento do array jsonSemVirgulas. Em cada iteração a condição acessará o retorno do método contains(arg) em cada caso e se  true fará a adição do valor de elemento à ArrayList listaTitulos 
         for (String elemento : extrairJson()) {
-            if(elemento.contains("\"rank")){
-                listRank.add(elemento.replaceAll("rank\":\"", "").replaceFirst("\"", ""));
+            if(elemento.contains("\"imDbRating\"")){
+                listRating.add(elemento.replaceAll("imDbRating\":\"", "").replaceFirst("\"", ""));
             }
         }
         
         //Retorno o objeto ArrayList populado com os títulos
-        return listRank;
+        return listRating;
     }
 
     //Declaração de método que fará atribuição de cada elemento de título na lista declarada
