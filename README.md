@@ -28,6 +28,6 @@ Na classe App foi implementada a requisição HTTP via bibliotecas HTTPClient, H
 * **Dia 2:** Criada a classe ParseJsonIMDB que implementa uma separação do JSON de resposta da requiusição HTTP para um parâmetro desejado, como título ou ID do filme. No desafio era requerido um método por parâmetro, porém implementado um método genérico que retorna qualquer parâmetro do JSON, apenas alterando o argumento passado na evocação do método.
 ![imagem_parsejasonimdb](./img/parsejasonimdb.png)
 Na classe App foi implementado o uso da classe ParseJsonIMDB para exibir os parâmetros desejados do elemento 3, 4º filme do TOP 250;
-  * **Dia 2 - Refatoração:** Código refatorado para separação do código de requisição HTTP na classe HttpRequestIMDB. Refatoração da classe ParseJsonIMBD com a inclusão de métodos de retorno de lista de ID, titulo e rank. O método parseElemento(arg) continua implementado e evocado na classe App para retorno das imagens;
+  * **Refatoração:** Código refatorado para separação do código de requisição HTTP na classe HttpRequestIMDB. Refatoração da classe ParseJsonIMBD com a inclusão de métodos de retorno de lista de ID, titulo e rank. O método parseElemento(arg) continua implementado e evocado na classe App para retorno das imagens;
 
 * **Dia 3:**
