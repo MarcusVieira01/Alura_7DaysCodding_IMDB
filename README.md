@@ -29,5 +29,6 @@ Na classe App foi implementada a requisição HTTP via bibliotecas HTTPClient, H
 ![imagem_parsejasonimdb](./img/parsejasonimdb.png)
 Na classe App foi implementado o uso da classe ParseJsonIMDB para exibir os parâmetros desejados do elemento 3, 4º filme do TOP 250;
   * **Refatoração:** Código refatorado para separação do código de requisição HTTP na classe HttpRequestIMDB. Refatoração da classe ParseJsonIMBD com a inclusão de métodos de retorno de lista de ID, titulo e rank. O método parseElemento(arg) continua implementado e evocado na classe App para retorno das imagens;
+  ![imagem_httprequestimdb](./img/httprequestimdb.png)
 
 * **Dia 3:**
