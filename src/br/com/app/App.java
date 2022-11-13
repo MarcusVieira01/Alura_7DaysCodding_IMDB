@@ -3,8 +3,8 @@ package br.com.app;
 
 //Importação de calsse externa
 import java.util.List;
-
 import br.com.model.HttpRequestIMDB;
+
 //Importação de classe interna
 import br.com.model.ParseJsonIMDB;
 
