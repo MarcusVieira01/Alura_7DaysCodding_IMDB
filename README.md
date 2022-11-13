@@ -1,4 +1,4 @@
-# Projeto 7 days of code - Java e IMDb API
+# **Projeto 7 days of code - Java e IMDb API**
 
 ## Objetivo
 
@@ -7,7 +7,7 @@
 * Esse retorno será exibido em um arquivo HTML com sua devida formatação;
 * O retorno da IMDb API será via JSON;
 
-## Estrutura do desafio
+### Estrutura do desafio
 
 O desafio trata-se de um desenvolvimento orientado por 7 dias onde em cada dia é realizado um desafio:
 
@@ -19,7 +19,7 @@ O desafio trata-se de um desenvolvimento orientado por 7 dias onde em cada dia �
 6. Deixar o seu código mais genérico, ou seja, preparado para receber dados de outras APIs. Para isso, você usará interfaces;
 7. Ordenar a sua lista com base em diferentes atributos, utilizando a classe Collections e as interfaces Comparable e Comparator;
 
-## Implementações
+### Implementações
 
 * **Dia 1:** Criada classe **KeyReader** para que a leitura da chave de acesso à API seja feita de forma externa ao código. Dessa forma protege-se a chave pessoal de visualização no repositório. Em uma implementação, deve-se criar o arquivo **k_imdb.txt** e seu conteúdo deve conter a chave na primeira linha.
 ![imagem_keyreader](./img/keyreader.png)
