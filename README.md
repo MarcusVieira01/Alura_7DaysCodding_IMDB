@@ -31,4 +31,6 @@ Na classe App foi implementado o uso da classe ParseJsonIMDB para exibir os par�
   * **Refatoração:** Código refatorado para separação do código de requisição HTTP na classe HttpRequestIMDB. Refatoração da classe ParseJsonIMBD com a inclusão de métodos de retorno de lista de ID, titulo e rank. O método parseElemento(arg) continua implementado e evocado na classe App para retorno das imagens;
   ![imagem_httprequestimdb](./img/httprequestimdb.png)
 
-* **Dia 3:**
+* **Dia 3:** Criação da classe Movie para definir o objeto com as características de um filme onde criada via declaração e criação de novo arquivo e não usando a declaração via Record Class. Foi interpretado que a abstração via Record Classes geraria acoplamento incoerente. Como a sua declaração estaria dentro da classe App, a classe existiria apenas na execução deste método e não no contexto total do projeto.
+![imagem_movie](./img/movie.png)
+Refatoração da classe ParsonJsonIMDB com a alteração dos métodos de retorno dos elementos rate e id para os elementos rating (nota) e year (ano). Criação de anotações JavaDoc nas classes HttpRequestIMDB e KeyReader.
