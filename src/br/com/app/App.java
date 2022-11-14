@@ -33,15 +33,17 @@ public class App {
             filmes.add(new Movie(title.get(i), rating.get(i), year.get(i), image.get(i)));
         }
 
-        //Objeto PrintWriter
+        //Instanciação de objeto Writer via construtor PrintWriter(arquivo), que fará a escrita do conteúdo gerado via classe GeradorHtml
         PrintWriter writer = new PrintWriter("index.html");
-        //Instanciação de objeto para geração de html
+
+        //Instanciação de objeto via construtor GeradorHtml(arg) onde é passado o objeto Writer de valor de referência contido na variável writer
         GeradorHtml html = new GeradorHtml(writer);
-        //
+
+        //Evocação de método para geração do código e arquivo HTML e passando o objeto List filmes, que contém os objetos Movie e seus atributos. Evocado método para fechamento do acesso ao objeto writer
         html.gerarHtml(filmes);      
         writer.close();
 
-        //
+        //Exibição de mensagem que indica finalização da execução do programa
         System.out.println("Programa finalizado!");
     }
 }
