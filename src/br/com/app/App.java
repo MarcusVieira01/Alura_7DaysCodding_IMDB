@@ -2,13 +2,16 @@
 package br.com.app;
 
 //Importação de calsse externa
+//import java.io.BufferedWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import br.com.model.HttpRequestIMDB;
-import br.com.model.Movie;
 
 //Importação de classe interna
 import br.com.model.ParseJsonIMDB;
+import br.com.model.Movie;
+import br.com.model.GeradorHtml;
+import br.com.model.HttpRequestIMDB;
 
 //Declaração de classe
 public class App {
@@ -30,13 +33,15 @@ public class App {
             filmes.add(new Movie(title.get(i), rating.get(i), year.get(i), image.get(i)));
         }
 
+        //Objeto PrintWriter
+        PrintWriter writer = new PrintWriter("index.html");
+        //Instanciação de objeto para geração de html
+        GeradorHtml html = new GeradorHtml(writer);
+        //
+        html.gerarHtml(filmes);      
+        writer.close();
 
-
-
-
-
-
-        //Exibição de resultado para teste
-        System.out.println(filmes.get(3));
+        //
+        System.out.println("Programa finalizado!");
     }
 }
