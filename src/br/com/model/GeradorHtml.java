@@ -15,9 +15,9 @@ public class GeradorHtml {
         this.escritor = escritor;
     }
 
-    //
+    //Declaração de método que receberá um Writer e fará a escrita em um arquivo do código HTML declarado. Será inseridos os elementos desejados do objeto Movie da lista de filmes passada
     public void gerarHtml(List<Movie> filmes) throws Exception{
-        //
+        //Escrita do cabeçalho do arquivo HTML
         this.escritor.write("""
             <!DOCTYPE html>
             <html lang=\"pt-br\">
@@ -40,25 +40,31 @@ public class GeradorHtml {
                     <div class=\"row\">
                 """);
 
-        //
+        //Loop ForEach que fará a iteração de cada elemento do objeto List filmes, que contém os ombjetos Movie
         for(Movie filme : filmes){
+            //Declaração de variável e atribuição do corpo do código HTML
             String div = """
                                 <div class=\"col-2\">
                                     <div class=\"card text-white mt-3 mb-3\"  style=\"background-color: #102d2f;\">
                                         <h4 class=\"card-header text-center fs-4\" style=\"height: 75px;\">%s</h4>
                                         <div class=\"card-body\">
                                             <img class=\"card-img\" src=\"%s\" alt=\"%s\">
-                                            <p class=\"card-text text-center mt-2\">Nota: %s - Ano: %s</p>
+                                            <p class=\"card-text text-center mt-2\">Nota: %.1f - Ano: %d</p>
                                         </div>
                                     </div>
                                 </div>
                     """;
 
-            //
-            this.escritor.println(String.format(div, filme.getTitle(), filme.getImage(), filme.getTitle(), filme.getRating(), filme.getYear()));
+            //Evocação de método aninhado que fará a alteração dos marcadores definidos na variável div. Alteração essa com os valores de retorno dos métodos getter do objeto Movie iterado
+            this.escritor.println(String.format(div, 
+            filme.getTitle(), 
+            filme.getImage(),
+            filme.getTitle(), 
+            filme.getRating(), 
+            filme.getYear()));
         }
 
-        //
+        //scrita do fim do arquivo HTML
         this.escritor.write("""
                         </div>
                     </body>
