@@ -64,7 +64,7 @@ public class GeradorHtml {
             filme.getYear()));
         }
 
-        //scrita do fim do arquivo HTML
+        //Escrita do fim do arquivo HTML
         this.escritor.write("""
                         </div>
                     </body>
