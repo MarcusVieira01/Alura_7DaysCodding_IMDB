@@ -35,4 +35,9 @@ Na classe App foi implementado o uso da classe ParseJsonIMDB para exibir os par�
 ![imagem_movie](./img/movie.png)
 Refatoração da classe ParsonJsonIMDB com a alteração dos métodos de retorno dos elementos rate e id para os elementos rating (nota) e year (ano). Criação de anotações JavaDoc nas classes HttpRequestIMDB e KeyReader.
 
-- **Dia 4:**
+- **Dia 4:** Criação da classe GeradorHtml que fará um arquivo HTML com código pré definido e os elementos de cada objeto Movie. Implementação da geração de HTML na classe App. Usei como base a resposta do professor Steppat que instanciou um PrintWriter. COnfiguraççoes de CSS e BootStrap são autorais;
+![imagem_geradorhtml](./img/geradorhtml.png)
+
+- **Dia 5:** Como desde o início do desafio foram geradas as classes para encapsulamento do código, esse desafio foi concluído automáticamente, sem necessidade de refatoração;
+
+- **Dia 6:**
