@@ -1,5 +1,6 @@
 //Declaração de pacote
 package br.com.model;
+
 //Declaração de classe
 public class Movie {
     //Declaração de atributos
