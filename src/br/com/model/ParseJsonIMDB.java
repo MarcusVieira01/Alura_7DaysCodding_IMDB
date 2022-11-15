@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 //Declaração de classe
-public class ParseJsonApi {
+public class ParseJsonIMDB {
     //Atributos privados
     private String json;
 
     //Declaração de constutor
-    public ParseJsonApi(String json) {
+    public ParseJsonIMDB(String json) {
         this.json = json;
     }
 
@@ -103,4 +103,11 @@ public class ParseJsonApi {
         //Retorno do objeto de referência contida em listaTitulos
         return lista;
     }
+
+    @Override
+    public String toString() {
+        return "ParseJsonApi [json=" + json + "]";
+    }
+
+    
 }
