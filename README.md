@@ -43,4 +43,4 @@ Refatoração da classe ParsonJsonIMDB com a alteração dos métodos de retorno
 - **Dia 6:** Realização de refatoramentos:
   - Refatorada a classe KeyReader para que houvesse a leitura das chaves da Marvel API e do IMDb API;
   - Refatorada a classe HttpRequestIMDB para HttpRequestAPI e implementados os métodos de requisição para IMDb API e API Marvel, assim como os lançamentos de exceções pertinentes;
-  - Foi necessária a refatoração da classe ParseJsonIMDB para ParseJsonAPI para também possuir dois métodos: parseIMDB e parseMarvel;
+  - A;
