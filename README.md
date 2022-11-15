@@ -40,7 +40,7 @@ Refatoração da classe ParsonJsonIMDB com a alteração dos métodos de retorno
 
 - **Dia 5:** Como desde o início do desafio foram geradas as classes para encapsulamento do código, esse desafio foi concluído automáticamente, sem necessidade de refatoração;
 
-- **Dia 6:** Realização de refatoramentos:
-  - Refatorada a classe KeyReader para que houvesse a leitura das chaves da Marvel API e do IMDb API;
-  - Refatorada a classe HttpRequestIMDB para HttpRequestAPI e implementados os métodos de requisição para IMDb API e API Marvel, assim como os lançamentos de exceções pertinentes;
+- **Dia 6:** Criação da classe HashUtils que fará  aelaboração deuma hash conforme algoritmo MD5, para uso na requisição da API Marvel. Realização de refatoramentos:
+  - Refatoração da classe KeyReader para que houvesse a leitura das chaves da Marvel API e do IMDb API;
+  - Refatoração da classe HttpRequestIMDB para HttpRequestAPI e implementados os métodos de requisição para IMDb API e API Marvel, assim como os lançamentos de exceções pertinentes;
   - A;
