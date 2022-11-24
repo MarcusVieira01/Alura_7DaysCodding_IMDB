@@ -15,8 +15,11 @@ public class GeradorHtml {
         this.escritor = escritor;
     }
 
-    //Declaração de método que receberá um Writer e fará a escrita em um arquivo do código HTML declarado. Será inseridos os elementos desejados do objeto Movie da lista de filmes passada
-    public void gerarHtml(List<Movie> filmes) throws Exception{
+    /**
+     * Método que receberá um Writer e fará a escrita em um arquivo do código HTML declarado. Será inseridos os elementos desejados do objeto Movie da lista de filmes passada
+     * @param filmes - Objeto List a ser passado
+     */
+    public void gerarHtml(List<Movie> filmes){
         //Escrita do cabeçalho do arquivo HTML
         this.escritor.write("""
             <!DOCTYPE html>
