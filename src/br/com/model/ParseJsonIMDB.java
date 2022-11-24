@@ -82,8 +82,6 @@ public class ParseJsonIMDB {
         return listaTitulos;
     }
     
-    
-    
     //Declaração de método que fará a separação do JSON em elementos individuais e retornará um List com apenas os elementos do parâmetro desejado
     public List<String> parseElemento(String parametro){
         //Instanciação de novo objeto List com construtor ArrayList
@@ -104,10 +102,9 @@ public class ParseJsonIMDB {
         return lista;
     }
 
+    //Sobreescrita do método tostring)()
     @Override
     public String toString() {
         return "ParseJsonApi [json=" + json + "]";
     }
-
-    
 }
