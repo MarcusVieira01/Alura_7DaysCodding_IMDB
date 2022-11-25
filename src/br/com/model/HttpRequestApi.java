@@ -110,10 +110,10 @@ public class HttpRequestApi {
      * @return Corpo da resposta HTTP com requisição para API Marvel
      * @throws Exception
      */
-    public String requestMarvel(String caminhoMarvel) throws Exception{
+    public String requestMarvel(String caminhoChaveMarvel) throws Exception{
         try{
             //
-            endpointGenerator(caminhoMarvel);
+            endpointGenerator(caminhoChaveMarvel);
             
             //Instanciamento de objeto URI com a URL determinada pelo valor da variável endpoint
             URI uriMarvel = new URI(endpoint);
