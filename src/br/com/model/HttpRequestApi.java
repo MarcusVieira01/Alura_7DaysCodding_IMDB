@@ -25,12 +25,12 @@ public class HttpRequestApi {
 
     /**
      * AUXILIAR MARVEL
-     * @param caminhoMarvel
+     * @param caminhoChaveMarvel
      */
-    private void endpointGenerator(String caminhoMarvel){
+    private void endpointGenerator(String caminhoChaveMarvel){
         try{
             //Instanciação de objeto da classe File que conterá o arquivo de leitura das chaves de acesso para a API Marvel
-            File arquivoMarvel = new File(caminhoMarvel);
+            File arquivoMarvel = new File(caminhoChaveMarvel);
     
             //Instanciação de objeto da classe KeyReader que fará a leitura do arquivo que contém as chaves de acesso para a API Marvel
             KeyReader chave = new KeyReader();
