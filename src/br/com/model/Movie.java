@@ -14,7 +14,7 @@ public class Movie implements Content{
     private String title;
     private int year;
     private String image;
-    private float rating;
+    private String rating;
 
     /**
      * Declaração de construtor
@@ -25,7 +25,7 @@ public class Movie implements Content{
      */
     public Movie(String title,  String rating, String year, String image){
         this.title = title;
-        this.rating = Float.valueOf(rating);
+        this.rating = rating;
         this.year = Integer.parseInt(year);
         this.image = image;
     }
@@ -36,7 +36,7 @@ public class Movie implements Content{
     public String getTitle() {
         return this.title;
     }
-    public float getRating() {
+    public String getRating() {
         return this.rating;
     }
     public int getYear() {

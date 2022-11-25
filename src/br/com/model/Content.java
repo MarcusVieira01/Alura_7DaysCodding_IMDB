@@ -8,7 +8,7 @@ package br.com.model;
 public interface Content {
     //Declaração de métodos obrigatórios
     public String getTitle();
-    public float getRating();
+    public String getRating();
     public int getYear();
     public String getImage();
 }
