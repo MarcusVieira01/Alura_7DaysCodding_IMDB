@@ -58,9 +58,9 @@ public class HttpRequestApi {
      * @param arquivoImdb Passagem de uma String contendo o caminho do arquivo que contém a chave de acesso para IMDb API
      * @return Corpo da resposta HTTP com requisição para IMDb API
      */
-    public String requestImdb(String caminhoImdb){
+    public String requestImdb(String caminhoChaveImdb){
         //Instanciação de objeto da classe File que conterá o arquivo de leitura das chaves de acesso para o IMDb API
-        File arquivoImdb = new File(caminhoImdb);
+        File arquivoImdb = new File(caminhoChaveImdb);
 
         //Estrutura try/catch que fará a execução do código da cláusula try e em caso de exceção, elas serão tratadas
         try{
