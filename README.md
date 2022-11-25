@@ -36,11 +36,12 @@ Na classe App foi implementado o uso da classe ParseJsonIMDB para exibir os par�
 Refatoração da classe ParsonJsonIMDB com a alteração dos métodos de retorno dos elementos rate e id para os elementos rating (nota) e year (ano). Criação de anotações JavaDoc nas classes HttpRequestIMDB e KeyReader.
 
 - **Dia 4:** Criação da classe GeradorHtml que fará um arquivo HTML com código pré definido e os elementos de cada objeto Movie. Implementação da geração de HTML na classe App. Usei como base a resposta do professor Steppat que instanciou um PrintWriter. COnfiguraççoes de CSS e BootStrap são autorais;
-![imagem_geradorhtml](./img/geradorhtml.png)
+  - ![imagem_geradorhtml](./img/geradorhtml.png)
 
 - **Dia 5:** Como desde o início do desafio foram geradas as classes para encapsulamento do código, esse desafio foi concluído automáticamente, sem necessidade de refatoração;
 
-- **Dia 6:** Criação da classe HashUtils que fará  aelaboração deuma hash conforme algoritmo MD5, para uso na requisição da API Marvel. Realização de refatoramentos:
+- **Dia 6:** Criação da classe HashUtils que fará a elaboração de uma hash conforme algoritmo MD5, para uso na requisição da API Marvel. Realização de refatoramentos:
   - Refatoração da classe KeyReader para que houvesse a leitura das chaves da Marvel API e do IMDb API;
   - Refatoração da classe HttpRequestIMDB para HttpRequestAPI e implementados os métodos de requisição para IMDb API e API Marvel, assim como os lançamentos de exceções pertinentes;
-  - A;
+  - Criação da interface Content para que possa generalizar a lista de objetos passada para o método gerarHtml() da classe GeradorHTML;
+  - Inclusão de JavaDOCs em todas as classes do pacote model;
