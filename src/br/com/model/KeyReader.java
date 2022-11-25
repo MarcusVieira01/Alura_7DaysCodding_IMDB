@@ -23,7 +23,7 @@ public class KeyReader {
     String chavePublicaMarvel;
 
     /**
-     * @apiNote IMDB
+     * IMDB
      * Método getter de recuperação do valor da chave de acessoao IMDb API
      * @return String contendo a chave de acesso ao IMDb API
      * @throws Exception
@@ -36,8 +36,8 @@ public class KeyReader {
     }
 
     /**
-     * @apiNote MARVEL
-     * @returno valor da chave de acesso à Marvel API
+     * MARVEL
+     * @return valor da chave de acesso à Marvel API
      * @throws Exception
      */
     public String getChaveApiMarvel(File arquivo){
@@ -48,8 +48,8 @@ public class KeyReader {
     }
 
     /**
-     * @apiNote MARVEL
-     * @return o valor da chave privada de acesso à Marvel API
+     * MARVEL
+     * @return valor da chave privada de acesso à Marvel API
      * @throws Exception
      */
     public String getChavePublicaMarvel(File arquivo){
@@ -60,7 +60,7 @@ public class KeyReader {
     }
 
     /**
-     * @apiNote AUXILIAR
+     * AUXILIAR
      * @param arquivo Necessária passagem de um objeto instanciado pela classe File 
      * @throws Exception
      */
@@ -97,10 +97,5 @@ public class KeyReader {
         } catch (IOException eio) {
             System.out.println("Falha de IO: " + eio.getMessage());
         }
-
-        
-
-        
-
     }
 }

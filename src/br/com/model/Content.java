@@ -1,7 +1,10 @@
 //Declaração de pacote
 package br.com.model;
 
-//Declaração de interface
+//
+/**
+ *Declaração de interface para implementações futuras
+ */
 public interface Content {
     //Declaração de métodos obrigatórios
     public String getTitle();

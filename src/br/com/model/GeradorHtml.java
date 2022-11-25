@@ -5,12 +5,18 @@ package br.com.model;
 import java.io.PrintWriter;
 import java.util.List;
 
-//Declaração de classe
+/**
+ *@apiNote Declaração de classe que contém o método de geração de um HTML a partir de uma listagem genérica que extenda a classe Content
+ *
+ */
 public class GeradorHtml {
     //Declaração de atributos
     PrintWriter escritor;
 
-    //Declaração de construtor
+    /**
+     * Declaração de construtor
+     * @param escritor
+     */
     public GeradorHtml(PrintWriter escritor){
         this.escritor = escritor;
     }

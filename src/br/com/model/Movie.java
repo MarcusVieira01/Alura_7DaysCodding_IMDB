@@ -5,7 +5,10 @@ package br.com.model;
 import java.util.ArrayList;
 import java.util.List;
 
-//Declaração de classe
+/**
+ * @apiNote Declaração de classe concreta que define um objeto Movie
+ */
+//
 public class Movie implements Content{
     //Declaração de atributos
     private String title;
@@ -13,7 +16,13 @@ public class Movie implements Content{
     private String image;
     private float rating;
 
-    //Declaração de construtor
+    /**
+     * Declaração de construtor
+     * @param title
+     * @param rating
+     * @param year
+     * @param image
+     */
     public Movie(String title,  String rating, String year, String image){
         this.title = title;
         this.rating = Float.valueOf(rating);
@@ -21,7 +30,9 @@ public class Movie implements Content{
         this.image = image;
     }
 
-    //Declaração de métodos getter
+    /**
+     * Declaração de métodos getter
+     */
     public String getTitle() {
         return this.title;
     }
@@ -35,13 +46,17 @@ public class Movie implements Content{
         return this.image;
     }
 
-    //Método que retornará uma lista de filmes, após parsseamento na classe ParseJasonIMDB
+    /**
+     * Método que retornará uma lista de filmes, após parseamento de um JSON via classe ParseJasonIMDB
+     * @param jsonImdb Objeto da classe ParseJsonIMDB
+     * @return Lista de objetos Movie
+     */
     public static List<Movie> gerarListaFilmes(ParseJsonIMDB jsonImdb){
         //Instanciação de novo objeto via construtor ArrayList<>() que armazenará cada objeto Movie
         List<Movie> listaFilmes = new ArrayList<>();
 
         //Declaração de variáveis e atribuição dos valores de retorno dos métodos evocados, separando nas listas pertinentes cada elemento do filme.  
-        List<String> title = jsonImdb.parseTitulo();
+        List<String> title = jsonImdb.parseTitle();
         List<String> year = jsonImdb.parseYear();
         List<String> rating = jsonImdb.parseRating();
         List<String> image = jsonImdb.parseElemento("image");
@@ -55,7 +70,10 @@ public class Movie implements Content{
         return listaFilmes;
     }
     
-    //Sobreescrita do método to string
+    /**
+     * Sobreescrita do método to string
+     * @return Cadeia de caracteres pré definidos e concatenados com os atributos do objeto
+     */
     @Override
     public String toString() {
         return "Movie:\n" 

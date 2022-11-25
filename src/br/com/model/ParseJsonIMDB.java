@@ -5,22 +5,33 @@ package br.com.model;
 import java.util.ArrayList;
 import java.util.List;
 
-//Declaração de classe
+/**
+ *@apiNote Declaração de classe que fará o parseamento do JSON de retorno do IMBd API
+ */
 public class ParseJsonIMDB {
     //Atributos privados
     private String json;
 
-    //Declaração de constutor
+    /**
+     * Declaração de constutor
+     * @param json
+     */
     public ParseJsonIMDB(String json) {
         this.json = json;
     }
 
-    //Método getter para os atributos
+    /**
+     * Método getter para os atributos
+     * @return atributo JSON do objeto
+     */
     public String getJson(){
         return this.json;
     }
 
-    //Declaração de método auxiliar que fará a remoção de caracteres indesejados, fará a divisão do JSON e retornará um array com os elementos do atributo json
+    /**
+     * Declaração de método auxiliar que fará a remoção de caracteres indesejados, fará a divisão do JSON e retornará um array com os elementos do atributo json
+     * @return Array de strings com a separação e fracionamento do conteúdo do atiibuto json via métodos da classe String
+     */
     private String[] extrairJson() {
         //Realizada a substituição de caracteres indesejados por uma string vazia
         String jsonSemCaracteres = this.json.replace("{\"items\":[{", "")
@@ -34,7 +45,10 @@ public class ParseJsonIMDB {
         return jsonSeparado;
     }
     
-    //Declaração de método que fará atribuição de cada elemento de ID na lista declarada
+    /**
+     * Declaração de método que fará atribuição de cada elemento de ID na lista declarada
+     * @return Lista contendo o atributo year de cada elemento da lista retornada pelo método extrairJson()
+     */
     public List<String> parseYear(){
         //Instanciação de novo objeto List com construtor ArrayList
         List<String> listYear = new ArrayList<>();
@@ -50,7 +64,10 @@ public class ParseJsonIMDB {
         return listYear;
     }
     
-    //Declaração de método que fará atribuição de cada elemento de Rank na lista declarada
+    /**
+     * Declaração de método que fará atribuição de cada elemento de Rank na lista declarada
+     * @return Lista contendo o atributo rating de cada elemento da lista retornada pelo método extrairJson()
+     */
     public List<String> parseRating(){
         //Instanciação de novo objeto List com construtor ArrayList
         List<String> listRating = new ArrayList<>();
@@ -66,8 +83,11 @@ public class ParseJsonIMDB {
         return listRating;
     }
 
-    //Declaração de método que fará atribuição de cada elemento de título na lista declarada
-    public List<String> parseTitulo(){
+    /**
+     * Declaração de método que fará atribuição de cada elemento de título na lista declarada
+     * @return Lista contendo o atributo title de cada elemento da lista retornada pelo método extrairJson()
+     */
+    public List<String> parseTitle(){
         //Instanciação de novo objeto List com construtor ArrayList
         List<String> listaTitulos = new ArrayList<>();
         
@@ -82,7 +102,11 @@ public class ParseJsonIMDB {
         return listaTitulos;
     }
     
-    //Declaração de método que fará a separação do JSON em elementos individuais e retornará um List com apenas os elementos do parâmetro desejado
+    /**
+     * Declaração de método que fará a separação do JSON em elementos individuais e retornará um List com apenas os elementos do parâmetro desejado
+     * @param parametro Definirá qual elemento do JSON será parseado
+     * @return Lista contendo elementos fracionados via inserção do elemento desejado no argumento parâmetro
+     */
     public List<String> parseElemento(String parametro){
         //Instanciação de novo objeto List com construtor ArrayList
         List<String> lista = new ArrayList<>();
@@ -102,7 +126,10 @@ public class ParseJsonIMDB {
         return lista;
     }
 
-    //Sobreescrita do método tostring)()
+    /**
+     * Sobreescrita do método tostring)()
+     *@return String concatenando o elemento
+     */
     @Override
     public String toString() {
         return "ParseJsonApi [json=" + json + "]";

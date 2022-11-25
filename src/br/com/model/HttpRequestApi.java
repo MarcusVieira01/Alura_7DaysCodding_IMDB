@@ -11,12 +11,11 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.security.NoSuchAlgorithmException;
-
 import javax.management.InvalidAttributeValueException;
 
 /**
- * Classe concreta que fará uma requisição HTTP ao IMDb API e retornando o corpo da requisição na forma de string 
- * @author Marcus Vieira
+ *@apiNote Classe concreta que fará uma requisição HTTP ao IMDb API e retornando o corpo da requisição na forma de string 
+ *
  */
 public class HttpRequestApi {
     //Declaração de atributos
@@ -112,7 +111,7 @@ public class HttpRequestApi {
      */
     public String requestMarvel(String caminhoChaveMarvel) throws Exception{
         try{
-            //
+            //Evocação de método intero que fará a geração do endpoint, sendo comporto pela URL da API, um timestamp, uma hash contendo o timestamp e as chaves, assim como a chave privada
             endpointGenerator(caminhoChaveMarvel);
             
             //Instanciamento de objeto URI com a URL determinada pelo valor da variável endpoint
