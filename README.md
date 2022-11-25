@@ -31,16 +31,16 @@ O desafio trata-se de um desenvolvimento orientado por 7 dias onde em cada dia �
   - ![imagem_parsejasonimdb](./img/parsejasonimdb.png)
   - Na classe App foi implementado o uso da classe ParseJsonIMDB para exibir os parâmetros desejados do elemento 3, 4º filme do TOP 250;
     - **Refatoração:** Código refatorado para separação do código de requisição HTTP na classe HttpRequestIMDB. Refatoração da classe ParseJsonIMBD com a inclusão de métodos de retorno de lista de ID, titulo e rank. O método parseElemento(arg) continua implementado e evocado na classe App para retorno das imagens;
-    - ![imagem_httprequestimdb](./img/httprequestimdb.png)
+    ![imagem_httprequestimdb](./img/httprequestimdb.png)
 
 - **Dia 3:**
   - Criação da classe Movie para definir o objeto com as características de um filme. Criada via declaração e criação de novo arquivo, não usando a declaração via Record Class. Foi interpretado que a abstração via Record Classes geraria acoplamento incoerente, devido sua declaração estar dentro da classe App e dessa forma a classe existiria apenas na execução da classe App e não no contexto total do projeto.
-  - ![imagem_movie](./img/movie.png)
+  ![imagem_movie](./img/movie.png)
   - Refatoração da classe ParsonJsonIMDB com a alteração dos métodos de retorno dos elementos rate e id para os elementos rating (nota) e year (ano). Criação de anotações JavaDoc nas classes HttpRequestIMDB e KeyReader.
 
 - **Dia 4:**
   - Criação da classe GeradorHtml que fará um arquivo HTML com código pré definido e os elementos de cada objeto Movie. Implementação da geração de HTML na classe App. Usei como base a resposta do professor Steppat que instanciou um PrintWriter. COnfiguraççoes de CSS e BootStrap são autorais;
-  - ![imagem_geradorhtml](./img/geradorhtml.png)
+  ![imagem_geradorhtml](./img/geradorhtml.png)
 
 - **Dia 5:**
   - Como desde o início do desafio foram geradas as classes para encapsulamento do código, esse desafio foi concluído automáticamente, sem necessidade de refatoração;
