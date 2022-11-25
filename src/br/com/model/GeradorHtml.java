@@ -16,10 +16,10 @@ public class GeradorHtml {
     }
 
     /**
-     * Método que receberá um Writer e fará a escrita em um arquivo do código HTML declarado. Será inseridos os elementos desejados do objeto Movie da lista de filmes passada
-     * @param filmes - Objeto List a ser passado
+     * Método que receberá um Writer e fará a escrita em um arquivo do código HTML declarado. Serão inseridos os elementos desejados do objeto contido na lista passada no argumento
+     * @param elementos - Objeto List a ser passado
      */
-    public void gerarHtml(List<Movie> filmes){
+    public void gerarHtml(List<? extends Content> elementos){
         //Escrita do cabeçalho do arquivo HTML
         this.escritor.write("""
             <!DOCTYPE html>
@@ -44,7 +44,7 @@ public class GeradorHtml {
                 """);
 
         //Loop ForEach que fará a iteração de cada elemento do objeto List filmes, que contém os ombjetos Movie
-        for(Movie filme : filmes){
+        for(Content content : elementos){
             //Declaração de variável e atribuição do corpo do código HTML
             String div = """
                                 <div class=\"col-2\">
@@ -60,11 +60,11 @@ public class GeradorHtml {
 
             //Evocação de método aninhado que fará a alteração dos marcadores definidos na variável div. Alteração essa com os valores de retorno dos métodos getter do objeto Movie iterado
             this.escritor.println(String.format(div, 
-            filme.getTitle(), 
-            filme.getImage(),
-            filme.getTitle(), 
-            filme.getRating(), 
-            filme.getYear()));
+            content.getTitle(), 
+            content.getImage(),
+            content.getTitle(), 
+            content.getRating(), 
+            content.getYear()));
         }
 
         //Escrita do fim do arquivo HTML
