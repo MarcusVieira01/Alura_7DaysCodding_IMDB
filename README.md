@@ -45,9 +45,17 @@ O desafio trata-se de um desenvolvimento orientado por 7 dias onde em cada dia �
 - **Dia 5:**
   - Como desde o início do desafio foram geradas as classes para encapsulamento do código, esse desafio foi concluído automáticamente, sem necessidade de refatoração;
 
-- **Dia 6:** Criação da classe HashUtils que fará a elaboração de uma hash conforme algoritmo MD5, para uso na requisição da API Marvel. Realização de refatoramentos:
+- **Dia 6:**
+  - Criação da classe HashUtils que fará a elaboração de uma hash conforme algoritmo MD5, para uso na requisição da API Marvel. Realização de refatoramentos:
   - Refatoração da classe KeyReader para que houvesse a leitura das chaves da Marvel API e do IMDb API;
   - Refatoração da classe HttpRequestIMDB para HttpRequestAPI e implementados os métodos de requisição para IMDb API e API Marvel, assim como os lançamentos de exceções pertinentes;
   - Criação da interface Content para que possa generalizar a lista de objetos passada para o método gerarHtml() da classe GeradorHTML;
   - Criada classe ParseJsonMarvel para que realize o parseamento dos elementos title, year, rating e thumbnail do corpo de retorno da API Marvel;
+  - Criada abstração de séries com a classe Serie;
+  - Implementação da classe Main que fará a chamada da lógica da criação dos arquivos .html com as listagens do TOP 250 Filmes do IMDb e das 20 Séries da Marvel;
   - Inclusão de JavaDOCs em todas as classes do pacote model;
+  ![imagem_ultima_implementação](./img/ultimas_implementacoes.png)
+
+- **Dia 7:**
+  - Não foi realizada a implementação da classificação;
+  - Refatorado o index.html para que componha uma página HTML completa;
