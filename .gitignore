@@ -1,3 +1,4 @@
 #Iginorar arquivos .txt
 *.txt
 TesteMarvel.java
+TesteMarvel.class
