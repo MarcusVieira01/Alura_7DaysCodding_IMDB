@@ -49,4 +49,5 @@ O desafio trata-se de um desenvolvimento orientado por 7 dias onde em cada dia �
   - Refatoração da classe KeyReader para que houvesse a leitura das chaves da Marvel API e do IMDb API;
   - Refatoração da classe HttpRequestIMDB para HttpRequestAPI e implementados os métodos de requisição para IMDb API e API Marvel, assim como os lançamentos de exceções pertinentes;
   - Criação da interface Content para que possa generalizar a lista de objetos passada para o método gerarHtml() da classe GeradorHTML;
+  - Criada classe ParseJsonMarvel para que realize o parseamento dos elementos title, year, rating e thumbnail do corpo de retorno da API Marvel;
   - Inclusão de JavaDOCs em todas as classes do pacote model;
