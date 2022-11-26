@@ -52,10 +52,10 @@ O desafio trata-se de um desenvolvimento orientado por 7 dias onde em cada dia �
   - Criação da interface Content para que possa generalizar a lista de objetos passada para o método gerarHtml() da classe GeradorHTML;
   - Criada classe ParseJsonMarvel para que realize o parseamento dos elementos title, year, rating e thumbnail do corpo de retorno da API Marvel;
   - Criada abstração de séries com a classe Serie;
-  - Implementação da classe Main que fará a chamada da lógica da criação dos arquivos .html com as listagens do TOP 250 Filmes do IMDb e das 20 Séries da Marvel;
   - Inclusão de JavaDOCs em todas as classes do pacote model;
   ![imagem_ultima_implementação](./img/ultimas_implementacoes.png)
 
 - **Dia 7:**
   - Não foi realizada a implementação da classificação;
+  - Implementação da classe Main que fará a chamada da lógica da criação dos arquivos .html com as listagens do TOP 250 Filmes do IMDb e das 20 Séries da Marvel;
   - Refatorado o index.html para que componha uma página HTML completa;
