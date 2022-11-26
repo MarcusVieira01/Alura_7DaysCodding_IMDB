@@ -1,4 +1,4 @@
-# **Projeto 7 days of code - Java e IMDb API**
+# **Projeto 7 days of code - Java e IMDb API | API Marvel**
 
 ## Objetivo
 
@@ -6,6 +6,7 @@
 - O retorno da IMDb API será via JSON;
 - Criar uma aplicação que consuma a IMDb API e retorne os TOP 250 filmes;
 - Esse retorno será exibido em um arquivo HTML com sua devida formatação;
+- EXTRA: Consumo da API Marvel com as 20 séries;
 
 ### Estrutura do desafio
 
