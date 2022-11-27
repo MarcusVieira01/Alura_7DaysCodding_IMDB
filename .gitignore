@@ -1,6 +1,9 @@
-#Iginorar arquivos .txt
-*.txt
+#Ignorar arquivos contendo as chaves para as APIS
+k_imdb.txt
+k_marvel.txt
+#Ignorar arquivos com os testes para as APIs específicas
 TesteMarvel.java
 TesteMarvel.class
 TesteIMDB.java
 TesteIMDB.class
+
