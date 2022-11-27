@@ -6,13 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @apiNote Declaração de classe concreta que define um objeto Movie
+ * @apiNote Declaração de classe concreta que define um objeto Movie 
+ * @implNote Implementação de Content para generalização
  */
 //
 public class Movie implements Content{
     //Declaração de atributos
     private String title;
-    private int year;
+    private String year;
     private String image;
     private String rating;
 
@@ -26,22 +27,24 @@ public class Movie implements Content{
     public Movie(String title,  String rating, String year, String image){
         this.title = title;
         this.rating = rating;
-        this.year = Integer.parseInt(year);
+        this.year = year;
         this.image = image;
     }
 
-    /**
-     * Declaração de métodos getter
-     */
+    //Declaração de métodos getter sobreescritos, advindos da interface Content
+    @Override
     public String getTitle() {
         return this.title;
     }
+    @Override
     public String getRating() {
         return this.rating;
     }
-    public int getYear() {
+    @Override
+    public String getYear() {
         return this.year;
     }
+    @Override
     public String getImage() {
         return this.image;
     }
@@ -78,8 +81,8 @@ public class Movie implements Content{
     public String toString() {
         return "Movie:\n" 
         + "title: " + title 
-        + "\nrating: " + String.valueOf(rating) 
-        + "\nyear: " + String.valueOf(year) 
+        + "\nrating: " + rating
+        + "\nyear: " + year 
         + "\nimage: " + image;
     }
 }
